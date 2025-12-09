@@ -10,7 +10,7 @@
 		<li>M integrates discrete event simulation semantics</li>
 		<li>M has a formalized semantics and type system, which allows to convert it other models for simulation, execution, verification with semantic preservation</li>
 	</ul>
-	<img src="images/m-tankctrl.png" style="width:600px;"/>
+	<img src="images/m-tankctrl.png" style="width:580px;"/>
 	<img src="images/m-ball.png" style="width:380px;"/>
 		
 	<h1>What is model compilation?</h1>
@@ -22,6 +22,30 @@
 	The M toolchain and language was created by Hiep Hong Trinh during his PhD study at Mälardalen University, Västerås, Sweden (2023 - 2027, expectedly).
 	<br>
 	Supervisors: Federico Ciccozzi, Marjan Sirjani, Mikael Sjödin, Abu Naser Masud
+	
+	<h1>Releases</h1>
+	The M compiler and its default backends (M-simulator, M-executor, M-verifier) will be released soon. Users can use M directly or adapt their models to M to reuse the model compilation paradigm. They can create their custom generator by inheriting the base generator and overriding its methods. A conceptual Java code goes as below:
+	<pre>
+	package m.generators.mine;
+	import m.compiler.*;
+	import m.generators.base.*;
+	
+	class MyGenerator extends BaseGenerator{
+		@Override 
+		public String outputFileExt() {
+			return "mine";
+		}
+		
+		@Override 
+		public String generateVarDecl(VarDecl decl){...}
+	}	
+	
+	main{
+	   MCompiler mc = new MCompiler();
+	   mc.compile(/path/to/your/m/file);
+	   mc.generate(/path/to/your/generator/class);
+	}
+	</pre>
 	
 	<h1>Publications</h1>
 	<ul>
