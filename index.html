@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head><title>M Language</title></head>
-  <body><h1>Hello from M!</h1></body>
+  <body>
+	<h1>What is M?</h1>
+	<ul>
+		<li>M is a textual grammar-driven language for modeling systems and software which are composed of concurrent, reactive, asynchronous, distributed entities.</li>
+		<li>M looks like popular programming languages like Java, C++ but it is for programming system models for simulation, code generation and formal verification in one place</li>
+		<li>M uses an extended timed actor model to model system entities and interactions</li>
+		<li>M integrates discrete event simulation semantics</li>
+		<li>M has a formalized semantics and type system, which allows to convert it other models for simulation, execution, verification with semantic preservation</li>
+	</ul>
+		
+	<h1>What is model compilation?</h1>
+	Traditionally, a program compiler takes a program written in a programming language, parses its concrete syntax, generates a corresponding abstract syntax tree (AST) for semantic analyses and intermediate code generation. A program compiler finally generates a executable code to run the input program on a target machine.
+	
+	Similarly, a model compiler takes a model composed in a modeling language, and also generates an AST decorated with various semantic attributes to verify the input model's semantic correctness, including type safety, then the decorated AST is reused by different backend consumers to generate other specialized models therefrom for different inspection kinds: simulation, real deployment and formal verification (typically, model-checking). By facilitating multi-target compilation right at the beginning, M compiler allows reusage of syntactical and semantical analysis for subsequent translations from a high-level abstract model to concrete target models with semantic preservation.
+	
+	<h1>Author</h1>
+	The M toolchain and language was created by Hiep Hong Trinh during his PhD study at Mälardalen University, Västerås, Sweden (2023 - 2027, expectedly).
+	
+	<h1>Publications</h1>
+	<ul>
+		<li><a href="https://arxiv.org/abs/2511.15257" target="_blank">[2025] M, Toolchain and Language for Reusable Model Compilation
+</a></li>
+		<li><a href="https://arxiv.org/abs/2511.15227" target="_blank">[2025] Modelling and Model-Checking a ROS2 Multi-Robot System using Timed Rebeca
+</a></li>
+	</ul>
+	
+  </body>  
 </html>
